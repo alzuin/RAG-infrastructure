@@ -19,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: terraform  # Adjust if your .tf files are in a different folder
+        working-directory: .  # Adjust if your .tf files are in a different folder
 
     steps:
       - name: Checkout repository
