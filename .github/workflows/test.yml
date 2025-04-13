@@ -14,6 +14,9 @@ jobs:
     name: Terraform FMT, Init, and Validate
     runs-on: ubuntu-latest
 
+    container:
+      image: alpine/terragrunt
+
     defaults:
       run:
         working-directory: terraform  # Adjust if your .tf files are in a different folder
@@ -21,11 +24,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.6.6
 
       - name: Terraform Format Check
         run: terraform fmt -check
