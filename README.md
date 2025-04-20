@@ -1,3 +1,5 @@
+This is a cleaned and published version of a private repo, containing only the final version for demonstration purposes.
+
 # Terraform Infrastructure for LLM-Powered Assistant
 
 This repository contains Terraform modules and configurations to provision and manage the cloud infrastructure required for a serverless, LLM-powered assistant backend.
