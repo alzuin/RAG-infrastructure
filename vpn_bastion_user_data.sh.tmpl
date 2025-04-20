@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+apt update
+DEBIAN_FRONTEND=noninteractive apt install -y strongswan firewalld
+
+systemctl enable firewalld
+systemctl start firewalld
+systemctl enable strongswan-starter
+
+mkdir -p /etc/strongswan
+
+%{ for file in files ~}
+cat > /etc/strongswan/${file.name} <<EOF
+${file.content}
+EOF
+%{ endfor ~}
+
+cat > /etc/strongswan/ipsec.secrets <<EOF
+${ipsec_secrets}
+EOF
+
+systemctl restart strongswan-starter

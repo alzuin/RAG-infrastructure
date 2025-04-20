@@ -1,0 +1,5 @@
+.idea
+.terraform
+pm-infrastructure.iml
+terraform.tfvars
+.terraform.local.hcl

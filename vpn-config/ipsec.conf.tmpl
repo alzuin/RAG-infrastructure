@@ -1,0 +1,15 @@
+conn home-vpn
+  auto=start
+  left=%defaultroute
+  leftid=${left_id}
+  leftsubnet=${left_subnet}
+  right=${right_ip}
+  rightid=${right_id}
+  rightsubnet=${right_subnet}
+  ike=aes256-sha256-modp2048
+  esp=aes256-sha256
+  keyexchange=ikev2
+  authby=psk
+  type=tunnel
+  dpdaction=restart
+  keyingtries=%forever
